@@ -6,7 +6,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Generate matrix of 1 and 0 
+# Generate matrix of 1 and 0
 game_grid = np.random.randint(2, size=(3,3))
 
 # initialize num_row and num_col variables
@@ -21,14 +21,11 @@ neighbor_count = 0
 num_cycle = 0
 while(num_cycle <= 10):
     print(game_grid)
-    #print(neighbor_count)
     # for loops to index into matrix
     for i in range(num_row):
         for j in range(num_col):
-            #print(game_grid[i,j])
             for row in range(i-1,i+1):
                 for col in range(j-1,j+1):
-                    #print(game_grid[row,col])
                     if row == i and col == j:
                         continue
                     neighbor_count += game_grid[row%num_row,col%num_col]
